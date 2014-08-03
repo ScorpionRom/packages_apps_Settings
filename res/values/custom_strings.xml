@@ -22,4 +22,8 @@
      <string name="custom_settings">Scorpion</string> 
      <string name="custom_settings_summary">ROM Customization</string>
 
+    <!-- Scramble PIN Layout on Lockscreen -->
+    <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
+    <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
+
 </resources>
