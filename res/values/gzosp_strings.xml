@@ -75,4 +75,7 @@
     <!-- Battery styles -->
     <string name="battery_image">Battery image</string>
     <string name="battery_image_description">Show battery image in status bar</string>
+
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
 </resources>
