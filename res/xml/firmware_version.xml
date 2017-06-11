@@ -45,6 +45,14 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"/>
 
+    <!-- Scorpion Version -->
+    <Preference
+        android:key="scorpion_version"
+        android:title="@string/scorpion_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.ROMVersionPreferenceController"/>
+
     <!-- Baseband -->
     <Preference
         android:key="base_band"
