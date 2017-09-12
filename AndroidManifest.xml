@@ -3342,8 +3342,6 @@
         <service android:name=".fuelgauge.batterytip.AnomalyDetectionJobService"
                  android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <!-- This is the longest AndroidManifest.xml ever. -->
-
         <!-- Start of our manifest entries -->
 
         <!-- Scorpion Settings -->
@@ -3361,7 +3359,10 @@
                        android:resource="@string/scorpion_nest_summary"/>
         </activity>
 
-         <!-- Heads up settings activity -->
+        <!-- Hide Apps from Recents (HAFR) -->
+        <activity android:name="com.nest.settings.recents.HAFRAppListActivity" />
+
+        <!-- Heads up settings activity. -->
         <activity android:name="Settings$HeadsUpSettingsActivity"
                 android:label="@string/heads_up_notifications"
                 android:excludeFromRecents="true">
