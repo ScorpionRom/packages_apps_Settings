@@ -14,12 +14,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Scorpion version -->
+   <!-- Rom version -->
+    <string name="rom_version_title">Scorpion version</string>
     <string name="scorpion_version">Scorpion Build</string>
-
-    <!-- Fingerprint location message -->
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_front">Locate the fingerprint sensor on the front of your phone.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_left">Locate the fingerprint sensor on the left side of your phone.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_right">Locate the fingerprint sensor on the right side of your phone.</string>
+    
+    <!-- Settings Integration -->
+     <string name="custom_settings">Scorpion</string> 
+     <string name="custom_settings_summary">ROM Customization</string>
 
 </resources>
