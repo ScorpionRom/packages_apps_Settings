@@ -21,7 +21,12 @@
 
     <!-- Rom version -->
     <string name="rom_version_title">Scorpion version</string>
+    
+    <!-- Settings Integration -->
+    <string name="custom_settings">Scorpion</string> 
+    <string name="custom_settings_summary">ROM Customization</string>
 
+    <!-- Dev Mode -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
 
     <!-- Manual provisioning support -->
