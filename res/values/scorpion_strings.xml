@@ -15,6 +15,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Scorpion version in About phone -->
+    <string name="rom_version_title">Scorpion version</string>
+
     <!-- MSIM Manual provisioning -->
     <string name="sim_enabler_summary"><xliff:g id="displayName">%1$s</xliff:g> is <xliff:g id="status" example="disabled">%2$s</xliff:g></string>
     <string name="sim_enabled">enabled</string>
@@ -37,9 +40,6 @@
     <!-- Density category -->
     <string name="density_category">Density options</string>
 
-    <!-- DU version in About phone -->
-    <string name="rom_version_title">Scorpion version</string>
-
     <!-- Selinux -->
     <string name="selinux_status">SELinux status</string>
     <string name="selinux_status_disabled">Disabled</string>
@@ -49,4 +49,7 @@
     <!-- Ambient category -->
     <string name="ambient_display_category">Ambient options</string>
     <string name="custom_ambient_display_summary">Configure advanced Ambient display</string>
+
+    <!-- Manage applications, package string displayed in app snippet -->
+    <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
 </resources>
