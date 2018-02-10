@@ -53,6 +53,12 @@
     <string name="lock_directly_show_pin">Directly show PIN entry</string>
     <string name="lock_directly_show_summary">Skip the swipe up to unlock screen when unlocking the device</string>
 
+    <!-- Screen off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
+
     <!-- Volume Steps -->
     <string name="volume_steps_title">Volume steps</string>
     <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
