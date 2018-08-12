@@ -138,9 +138,10 @@ import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.calling.WifiCallingSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.tether.WifiTetherSettings;
-
+//Scorpion Additions
 import com.nest.settings.ScorpionNest;
 import com.nest.settings.fragments.HeadsUpSettings;
+import com.nest.settings.moresettings.SmartPixels;
 
 public class SettingsGateway {
 
@@ -267,9 +268,11 @@ public class SettingsGateway {
             DirectoryAccessDetails.class.getName(),
             ToggleBackupSettingFragment.class.getName(),
             PreviouslyConnectedDeviceDashboardFragment.class.getName(),
+            //Scorpion Additions
             ScorpionNest.class.getName(),
             HeadsUpSettings.class.getName(),
             RunningServices.class.getName(),
+            SmartPixels.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -308,7 +311,9 @@ public class SettingsGateway {
             Settings.DeviceInfoSettingsActivity.class.getName(),
             Settings.EnterprisePrivacySettingsActivity.class.getName(),
             Settings.MyDeviceInfoActivity.class.getName(),
+            //Scorpion Additions
             Settings.ScorpionNestActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }
