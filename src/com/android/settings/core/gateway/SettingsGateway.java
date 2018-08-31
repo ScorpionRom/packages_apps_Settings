@@ -141,6 +141,7 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.nest.settings.MainActivity;
 import com.nest.settings.ui.HeadsUpSettings;
 import com.nest.settings.moresettings.OmniJawsSettings;
+import com.nest.settings.ui.LockScreenSettings;
 
 public class SettingsGateway {
 
@@ -270,6 +271,7 @@ public class SettingsGateway {
             MainActivity.class.getName(),
             HeadsUpSettings.class.getName(),
             OmniJawsSettings.class.getName(),
+            LockScreenSettings.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
