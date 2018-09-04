@@ -43,7 +43,6 @@ import com.android.settings.deviceinfo.FccEquipmentIdPreferenceController;
 import com.android.settings.deviceinfo.FeedbackPreferenceController;
 import com.android.settings.deviceinfo.IpAddressPreferenceController;
 import com.android.settings.deviceinfo.ManualPreferenceController;
-import com.android.settings.deviceinfo.PhoneNumberPreferenceController;
 import com.android.settings.deviceinfo.RegulatoryInfoPreferenceController;
 import com.android.settings.deviceinfo.ROMVersionPreferenceController;
 import com.android.settings.deviceinfo.SafetyInfoPreferenceController;
@@ -65,7 +64,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
         implements DeviceNamePreferenceController.DeviceNamePreferenceHost {
     private static final String LOG_TAG = "MyDeviceInfoFragment";
 
-    private static final String KEY_MY_DEVICE_INFO_HEADER = "my_device_info_header";
     //private static final String KEY_LEGAL_CONTAINER = "legal_container";
 
     @Override
@@ -76,12 +74,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
     @Override
     public int getHelpResource() {
         return R.string.help_uri_about;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        initHeader();
     }
 
     @Override
@@ -107,7 +99,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
             Lifecycle lifecycle) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new EmergencyInfoPreferenceController(context));
-        controllers.add(new PhoneNumberPreferenceController(context));
         controllers.add(new BrandedAccountPreferenceController(context));
         DeviceNamePreferenceController deviceNamePreferenceController =
                 new DeviceNamePreferenceController(context);
@@ -144,33 +135,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void initHeader() {
-        // TODO: Migrate into its own controller.
-        final LayoutPreference headerPreference =
-                (LayoutPreference) getPreferenceScreen().findPreference(KEY_MY_DEVICE_INFO_HEADER);
-        final View appSnippet = headerPreference.findViewById(R.id.entity_header);
-        final Activity context = getActivity();
-        final Bundle bundle = getArguments();
-        EntityHeaderController controller = EntityHeaderController
-                .newInstance(context, this, appSnippet)
-                .setRecyclerView(getListView(), getLifecycle())
-                .setButtonActions(EntityHeaderController.ActionType.ACTION_NONE,
-                        EntityHeaderController.ActionType.ACTION_NONE);
-
-        // TODO: There may be an avatar setting action we can use here.
-        final int iconId = bundle.getInt("icon_id", 0);
-        if (iconId == 0) {
-            UserManager userManager = (UserManager) getActivity().getSystemService(
-                    Context.USER_SERVICE);
-            UserInfo info = Utils.getExistingUser(userManager, android.os.Process.myUserHandle());
-            controller.setLabel(info.name);
-            controller.setIcon(
-                    com.android.settingslib.Utils.getUserIcon(getActivity(), userManager, info));
-        }
-
-        controller.done(context, true /* rebindActions */);
     }
 
     @Override

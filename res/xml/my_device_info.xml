@@ -21,11 +21,12 @@
     android:key="my_device_info_pref_screen"
     android:title="@string/about_settings">
 
-    <com.android.settings.applications.LayoutPreference
-        android:key="my_device_info_header"
-        android:order="0"
-        android:layout="@layout/settings_entity_header"
-        android:selectable="false"/>
+    <!-- ROM Version -->
+    <Preference
+        android:key="modversion"
+        android:order="11"
+        android:title="@string/rom_version_title"
+        android:summary="@string/device_info_default"/> 
 
     <!-- Device name -->
     <com.android.settings.widget.ValidatedEditTextPreference
@@ -40,14 +41,6 @@
         android:order="2"
         android:title="@string/my_device_info_account_preference_title"
         android:summary="@string/summary_placeholder"/>
-
-    <!-- Phone number -->
-    <Preference
-        android:key="phone_number"
-        android:order="3"
-        android:title="@string/status_number"
-        android:summary="@string/summary_placeholder"
-        android:selectable="false"/>
 
     <Preference
         android:key="emergency_info"
