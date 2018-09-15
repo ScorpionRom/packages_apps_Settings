@@ -28,14 +28,6 @@
         android:enabled="false"
         android:layout="@layout/scorpion_logo" />
 
-      <Preference
-        android:key="gesture_settings"
-        android:title="@string/gesture_preference_title"
-        android:icon="@drawable/ic_settings_gestures"
-        android:order="-250"
-        android:fragment="com.android.settings.gestures.GestureSettings"
-        settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
-
     <!-- Button Settings -->
     <Preference
         android:key="button_settings"
