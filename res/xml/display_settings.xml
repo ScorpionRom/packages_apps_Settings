@@ -128,7 +128,6 @@
         android:title="@string/tap_to_wake"
         android:summary="@string/tap_to_wake_summary" />
 
-
     <ListPreference
         android:key="theme"
         android:title="@string/color_theme"
@@ -148,6 +147,13 @@
         <Preference
             android:key="accent_picker"
             android:title="@string/theme_accent_picker_title" />
+
+    <ListPreference
+        android:key="qs_tile_style"
+        android:title="@string/qs_tile_style_title"
+        android:persistent="false"
+        android:entries="@array/qs_selector_entries"
+        android:entryValues="@array/qs_selector_values" />
 		
 	<com.android.settings.display.FontDialogPreference
             android:key="custom_font"
@@ -159,5 +165,4 @@
         android:key="vr_display_pref"
         android:title="@string/display_vr_pref_title"
         android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
-
 </PreferenceScreen>
