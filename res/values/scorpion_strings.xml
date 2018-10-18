@@ -164,4 +164,8 @@
 
     <!-- Battery temp -->
     <string name="battery_temp_title">Battery temperature</string>
+
+    <!-- Option defining the phone ringtone for slot1 on Muilti SIM device -->
+    <string name="ringtone1_title">Phone ringtone - SIM 1</string>
+    <string name="ringtone2_title">Phone ringtone - SIM 2</string>
 </resources>
