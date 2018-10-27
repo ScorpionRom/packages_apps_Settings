@@ -38,6 +38,15 @@
     <string name="density_category">Density options</string>
 
     <!-- DU version in About phone -->
-    <string name="rom_version_title">DU version</string>
+    <string name="rom_version_title">Scorpion version</string>
 
+    <!-- Selinux -->
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
+
+    <!-- Ambient category -->
+    <string name="ambient_display_category">Ambient options</string>
+    <string name="custom_ambient_display_summary">Configure advanced Ambient display</string>
 </resources>
