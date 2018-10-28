@@ -78,4 +78,14 @@
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- System theme -->
+    <string name="system_theme_wallpaper">Automatic (based on time of day)</string>
+    <string name="system_theme_light">Light</string>
+    <string name="system_theme_dark">Dark</string>
+    <string name="theme_category_title">System theme</string>
+    <string name="accent_picker_dialog_title">Select an accent color</string>
+    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_default">Default</string>
+    <string name="theme_accent_picker_summary">Select system theme accent color</string>
 </resources>

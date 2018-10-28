@@ -97,14 +97,6 @@
             android:title="@string/color_temperature"
             android:summary="@string/color_temperature_desc" />
 
-        <ListPreference
-            android:key="dark_ui_mode"
-            android:title="@string/dark_ui_mode"
-            android:dialogTitle="@string/dark_ui_mode_title"
-            android:entries="@array/dark_ui_mode_entries"
-            android:entryValues="@array/dark_ui_mode_values" />
-     </PreferenceCategory>
-
     <PreferenceCategory
         android:key="debug_debugging_category"
         android:title="@string/debug_debugging_category"
@@ -186,6 +178,7 @@
     <PreferenceCategory
         android:key="dashboard_tile_placeholder"
         android:order="300" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="debug_networking_category"
