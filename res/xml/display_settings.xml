@@ -159,12 +159,9 @@
             android:title="@string/font_picker_title"
             android:persistent="false" />    
 
-        <ListPreference
+        <Preference
             android:key="qs_tile_style"
-            android:title="@string/qs_tile_style_title"
-            android:entries="@array/qs_tile_style_selector_entries"
-            android:entryValues="@array/qs_tile_style_selector_values"
-            android:persistent="false" />
+            android:title="@string/qs_tile_style_title" />
 
      </PreferenceCategory>
 </PreferenceScreen>
