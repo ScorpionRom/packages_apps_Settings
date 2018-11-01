@@ -23,7 +23,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceClickListener;
 import android.support.v7.preference.PreferenceScreen;
 
-import com.android.internal.util.du.Utils;
+import com.android.internal.util.gzosp.GzospUtils;
 
 import com.android.settings.core.PreferenceControllerMixin;
 
@@ -32,7 +32,7 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnResume;
 
-import com.dirtyunicorns.tweaks.fragments.QsTileStyles;
+import com.android.settings.scorpion.theme.QsTileStyles;
 
 public class QsTileStylesPreferenceController extends AbstractPreferenceController
         implements PreferenceControllerMixin, LifecycleObserver, OnResume {
@@ -66,7 +66,7 @@ public class QsTileStylesPreferenceController extends AbstractPreferenceControll
 
     @Override
     public boolean isAvailable() {
-        return !Utils.isPackageInstalled(mContext, SUBS_PACKAGE);
+        return !GzospUtils.isPackageInstalled(mContext, SUBS_PACKAGE);
     }
 
     @Override
