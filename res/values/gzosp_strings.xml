@@ -41,20 +41,19 @@
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max currentvoltage and battery temperature on lockscreen while charging</string>
 
-    <!-- Facelock toggle -->
-    <string name="face_auto_unlock_title">Face auto unlock</string>
-    <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
-
     <!-- Button Settings -->
     <string name="button_settings_title">Buttons</string>
     <string name="button_settings_title_summary">Perform custom button actions</string>
     <string name="button_settings_description">Set custom button actions to several hardware keys presented on your device.</string>
+
     <!-- Navigation bar -->
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="navigation_bar_title_summary">Enable on-screen navigation keys</string>
+
     <!-- Button brightness -->
     <string name="hardware_brightness_keys_title">Backlight</string>
     <string name="hardware_brightness_keys_title_summary">Enable navigation keys backlight</string>
+
     <!-- Buttons: Categories -->
     <string name="home_key_title">Home button</string>
     <string name="back_key_title">Back button</string>
@@ -62,6 +61,7 @@
     <string name="assist_key_title">Assist button</string>
     <string name="app_switch_key_title">Recents button</string>
     <string name="camera_key_title">Camera button</string>
+
     <!-- Buttons: Actions -->
     <string name="short_press_title">Short press action</string>
     <string name="long_press_title">Long press action</string>
@@ -75,5 +75,4 @@
     <string name="action_launch_camera">Open camera</string>
     <string name="action_last_app">Launch last app</string>
     <string name="action_splitscreen">Splitscreen</string>
-
 </resources>
