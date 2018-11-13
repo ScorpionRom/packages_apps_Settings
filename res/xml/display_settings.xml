@@ -156,8 +156,12 @@
         android:persistent="false"
         android:entries="@array/qs_selector_entries"
         android:entryValues="@array/qs_selector_values" />
-
-     </PreferenceCategory>
+		
+	<com.android.settings.display.FontDialogPreference
+            android:key="custom_font"
+            android:title="@string/font_picker_title"
+            android:persistent="false" />     
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="density_category"
