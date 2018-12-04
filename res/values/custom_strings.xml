@@ -19,7 +19,7 @@
     <string name="scorpion_version">Scorpion Build</string>
     
     <!-- Settings Integration -->
-     <string name="custom_settings">Scorpion</string> 
+     <string name="custom_settings">Scorpion Nest</string> 
      <string name="custom_settings_summary">ROM Customization</string>
 
     <!-- Scramble PIN Layout on Lockscreen -->
