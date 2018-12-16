@@ -17,6 +17,9 @@
    <!-- Rom version -->
     <string name="rom_version_title">Scorpion version</string>
     <string name="scorpion_version">Scorpion Build</string>
+
+    <!-- Build date -->
+    <string name="build_date">Build date</string>
     
     <!-- Settings Integration -->
      <string name="custom_settings">Scorpion Nest</string> 
