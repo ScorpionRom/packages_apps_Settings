@@ -94,7 +94,7 @@
     <string name="theme_accent_picker_summary">Select system theme accent color</string>
     <string name="theme_accent_picker_default">Default</string>
     <string name="accent_picker_material_colors">Material palette</string>
-    <string name="accent_picker_custom_colors">User requested</string>
+    <string name="accent_picker_custom_colors">Scorpion colors</string>
 
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>

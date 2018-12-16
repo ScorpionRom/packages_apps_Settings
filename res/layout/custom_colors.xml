@@ -21,7 +21,7 @@
         android:layout_columnWeight="1"
         android:gravity="center"
         android:layout_gravity="fill_horizontal"
-        android:background="#900000" />
+        android:background="#ff0000" />
     <Button
         android:id="@+id/userAccentTwo"
         android:layout_width="70dp"
@@ -29,7 +29,7 @@
         android:layout_columnWeight="1"
         android:gravity="center"
         android:layout_gravity="fill_horizontal"
-        android:background="#42069a" />
+        android:background="#673AB7" />
     <Button
         android:id="@+id/userAccentThree"
         android:layout_width="70dp"
@@ -37,7 +37,7 @@
         android:layout_columnWeight="1"
         android:gravity="center"
         android:layout_gravity="fill_horizontal"
-        android:background="#1976D2" />
+        android:background="#00C853" />
     <Button
         android:id="@+id/userAccentFour"
         android:layout_width="70dp"
