@@ -92,8 +92,4 @@
     <string name="theme_accent_picker_default">Default</string>
     <string name="accent_picker_material_colors">Material palette</string>
     <string name="accent_picker_custom_colors">User requested</string>
-
-    <!-- Ambient category -->
-    <string name="ambient_display_category">Ambient options</string>
-    <string name="custom_ambient_display_summary">Configure advanced Ambient display</string>
 </resources>
