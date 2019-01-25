@@ -168,4 +168,8 @@
     <!-- Option defining the phone ringtone for slot1 on Muilti SIM device -->
     <string name="ringtone1_title">Phone ringtone - SIM 1</string>
     <string name="ringtone2_title">Phone ringtone - SIM 2</string>
+
+    <!-- Changelog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">Gerrit instance changes</string>
 </resources>
