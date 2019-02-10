@@ -140,8 +140,6 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.nest.settings.ScorpionNest;
 import com.nest.settings.fragments.HeadsUpSettings;
-import com.nest.settings.moresettings.OmniJawsSettings;
-import com.nest.settings.fragments.LockScreenSettings;
 
 public class SettingsGateway {
 
@@ -270,8 +268,6 @@ public class SettingsGateway {
             PreviouslyConnectedDeviceDashboardFragment.class.getName(),
             ScorpionNest.class.getName(),
             HeadsUpSettings.class.getName(),
-            OmniJawsSettings.class.getName(),
-            LockScreenSettings.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
