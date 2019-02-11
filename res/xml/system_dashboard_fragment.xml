@@ -21,13 +21,6 @@
     android:title="@string/header_category_system"
     settings:initialExpandedChildrenCount="4">
 
-      <!-- Scorpion About logo -->
-      <PreferenceScreen
-        android:key="scorp_about"
-        android:order="-500"
-        android:enabled="false"
-        android:layout="@layout/scorpion_logo" />
-
       <!--<Preference
         android:key="gesture_settings"
         android:title="@string/gesture_preference_title"

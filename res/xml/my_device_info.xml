@@ -21,6 +21,13 @@
     android:key="my_device_info_pref_screen"
     android:title="@string/about_settings">
 
+    <!-- Scorpion About logo -->
+    <PreferenceScreen
+        android:key="scorp_about"
+        android:order="-500"
+        android:enabled="false"
+        android:layout="@layout/scorpion_logo" />
+
     <!-- Device name -->
     <com.android.settings.widget.ValidatedEditTextPreference
         android:key="device_name"
