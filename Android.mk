@@ -21,6 +21,7 @@ LOCAL_USE_AAPT2 := true
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_SRC_FILES += $(call all-java-files-under, ../Scorpion/src)
 LOCAL_SRC_FILES += $(call all-java-files-under, ../Changelog/app/src/main/java)
+LOCAL_SRC_FILES += $(call all-java-files-under, ../../../external/google/settings/src)
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-slices-builders \
@@ -51,7 +52,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     packages/apps/Scorpion/res \
-    packages/apps/Changelog/app/src/main/res 
+    packages/apps/Changelog/app/src/main/res \
+    external/google/settings/res
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
