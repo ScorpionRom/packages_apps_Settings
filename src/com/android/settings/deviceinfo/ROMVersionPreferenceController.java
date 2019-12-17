@@ -28,8 +28,8 @@ import com.android.settingslib.core.AbstractPreferenceController;
 public class ROMVersionPreferenceController extends AbstractPreferenceController implements
         PreferenceControllerMixin {
 
-    private static final String PROPERTY_ABC_VERSION = "ro.mod.version";
-    private static final String KEY_ABC_VERSION = "modversion";
+    private static final String PROPERTY_SCORPION_VERSION = "ro.mod.version";
+    private static final String KEY_SCORPION_VERSION = "modversion";
 
     public ROMVersionPreferenceController(Context context) {
         super(context);
@@ -37,20 +37,20 @@ public class ROMVersionPreferenceController extends AbstractPreferenceController
 
     @Override
     public boolean isAvailable() {
-        return !TextUtils.isEmpty(SystemProperties.get(PROPERTY_ABC_VERSION));
+        return !TextUtils.isEmpty(SystemProperties.get(PROPERTY_SCORPION_VERSION));
     }
 
     @Override
     public String getPreferenceKey() {
-        return KEY_ABC_VERSION;
+        return KEY_SCORPION_VERSION;
     }
 
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
-        final Preference pref = screen.findPreference(KEY_ABC_VERSION);
+        final Preference pref = screen.findPreference(KEY_SCORPION_VERSION);
         if (pref == null) return;
-        String version = SystemProperties.get(PROPERTY_ABC_VERSION);
+        String version = SystemProperties.get(PROPERTY_SCORPION_VERSION);
         pref.setSummary(version);
     }
 }

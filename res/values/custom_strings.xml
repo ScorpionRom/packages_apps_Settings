@@ -19,8 +19,8 @@
     <!-- Manage applications, package string displayed in app snippet -->
     <string name="packagename_text">"<xliff:g id="package_name">%1$s</xliff:g>"</string>
 
-    <!-- ABC version in About phone -->
-    <string name="rom_version_title">ABC version</string>
+    <!-- Scorpion version in About phone -->
+    <string name="rom_version_title">Scorpion version</string>
 
     <string name="fp_swipe_to_dismiss_notifications_title">Swipe fingerprint left or right to dismiss notifications</string>
     <string name="fp_swipe_to_dismiss_notifications_summary">To dismiss your notifications, swipe left or right on the fingerprint sensor on the back of your phone.</string>
