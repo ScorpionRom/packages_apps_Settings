@@ -39,7 +39,7 @@ public class BatteryLightSettings extends DashboardFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.SCORPION;
     }
 
     @Override
