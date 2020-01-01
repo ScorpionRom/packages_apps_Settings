@@ -21,6 +21,7 @@ import com.android.settings.DisplaySettings;
 import com.android.settings.IccLockSettings;
 import com.android.settings.MasterClear;
 import com.android.settings.Settings;
+import com.android.settings.StartThemes;
 import com.android.settings.TestingSettings;
 import com.android.settings.TetherSettings;
 import com.android.settings.TrustedCredentialsSettings;
@@ -286,6 +287,7 @@ public class SettingsGateway {
             MobileNetworkListFragment.class.getName(),
             GlobalActionsPanelSettings.class.getName(),
             RunningServices.class.getName(),
+            StartThemes.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
