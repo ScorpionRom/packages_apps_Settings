@@ -89,4 +89,9 @@
     <string name="greatest_tick_label">Metà schermo</string>
     <string name="gesture_back_deadzone_label">Zona morta</string>
     <string name="back_sensitivity_dialog_message_cust">\nUsa le prime due seekbar per configurare la sensibilità dello swipe indietro, la terza seekbar per impostare una zona morta nella parte superiore dello schermo, per evitare conflitti con i gesti delle app.</string>
+
+    <string name="lockscreen_clock_title">Orologio lockscreen</string>
+    <string name="lockscreen_clock_summary">Stile dell\'orologio in lockscreen e Ambient display</string>
+    <string name="lockscreen_clock_dialog_title">Seleziona lo stile dell\'orologio</string>
+    <string name="lockscreen_clock_hide">Nascosto</string>
 </resources>
