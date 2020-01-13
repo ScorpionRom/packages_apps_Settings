@@ -226,6 +226,13 @@
     <string name="partial_screenshot_as_default_title">Partial screenshot as default action</string>
     <string name="partial_screenshot_as_default_summary">Set partial screenshot as default action for Screenshot button in power menu. Otherwise a long press action triggers it.</string>
 
+    <!-- Custom ambient display -->
+    <string name="ambient_display_category">Ambient display</string>
+    <string name="lockscreen_settings_category">General</string>
+    <string name="ambient_other_category">Other</string>
+    <string name="ambient_display_custom_title">Custom options</string>
+    <string name="ambient_display_custom_summary">Wake screen with notifications and various gestures</string>
+
     <!-- Themes -->
     <string name="du_themes_title">Themes</string>
     <string name="du_themes_summary">Life is like a box of crayons..</string>
