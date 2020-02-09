@@ -138,6 +138,7 @@
         <item>@string/action_volume_panel</item>
         <item>@string/action_screen_off</item>
         <item>@string/action_screenshot</item>
+        <item>@string/action_partial_screenshot</item>
     </string-array>
 
     <string-array name="active_edge_actions_values" translatable="false">
@@ -149,6 +150,7 @@
         <item>6</item>
         <item>7</item>
         <item>9</item>
+        <item>13</item>
     </string-array>
 
     <!-- Motion Sense -->
