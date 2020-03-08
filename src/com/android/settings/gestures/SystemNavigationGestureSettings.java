@@ -137,6 +137,8 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
     private CustomPreferenceCategory mGestureTweaksCategory;
     private CustomSwitchPreference mGesturePillToggle;
 
+    private Preference mTweaksPreference;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
