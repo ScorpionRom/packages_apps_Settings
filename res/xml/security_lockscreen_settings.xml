@@ -37,6 +37,12 @@
             settings:searchable="false"
             settings:controller="com.android.settings.biometrics.face.FaceSettingsLockscreenBypassPreferenceController" />
 
+        <com.abc.support.preferences.SecureSettingSwitchPreference
+            android:key="sysui_keyguard_show_lock_icon"
+            android:title="@string/lockscreen_lock_icon_title"
+            android:summary="@string/lockscreen_lock_icon_summary"
+            android:defaultValue="true" />
+
         <com.android.settingslib.RestrictedSwitchPreference
             android:key="security_lockscreen_add_users_when_locked"
             android:title="@string/user_add_on_lockscreen_menu"
