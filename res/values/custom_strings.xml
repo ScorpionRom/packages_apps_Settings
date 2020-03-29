@@ -265,4 +265,7 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Lock icon</string>
     <string name="lockscreen_lock_icon_summary">Show current lock status icon on the lockscreen</string>
+
+    <string name="show_media_heads_up_title">Show media heads up</string>
+    <string name="show_media_heads_up_summary">Show media heads up when a new track is played, if the player is not already in foreground</string>
 </resources>
