@@ -272,4 +272,8 @@
     <!-- Double Tap gestures -->
     <string name="double_tap_sleep_gesture_title">Double tap to sleep</string>
     <string name="double_tap_sleep_gesture_summary">Double tap on the status bar to put the device to sleep</string>
+
+    <!-- 4G switch -->
+    <string name="show_fourg_icon_title">Show 4G instead of LTE</string>
+    <string name="show_fourg_icon_summary">Replaces LTE statusbar indicators with 4G</string>
 </resources>

@@ -17,7 +17,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="mobile_network_pref_screen"
-    settings:initialExpandedChildrenCount="4">
+    settings:initialExpandedChildrenCount="5">
 
     <Preference
         android:key="cdma_lte_data_service_key"
@@ -30,6 +30,12 @@
         android:title="@string/mobile_data_settings_title"
         android:summary="@string/mobile_data_settings_summary"
         settings:controller="com.android.settings.network.telephony.MobileDataPreferenceController"/>
+
+    <com.abc.support.preferences.SystemSettingSwitchPreference
+        android:key="show_fourg_icon"
+        android:title="@string/show_fourg_icon_title"
+        android:summary="@string/show_fourg_icon_summary"
+        android:defaultValue="false" />
 
     <com.android.settingslib.RestrictedSwitchPreference
         android:key="button_roaming_key"
