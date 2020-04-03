@@ -280,4 +280,9 @@
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
 
+    <!-- Qs background options -->
+    <string name="qs_background_title">Qs Background</string>
+    <string name="qs_background_summary">Make custom changes to the qs panel background</string>
+    <string name="qs_panel_alpha_title">Background opacity</string>
+    
 </resources>

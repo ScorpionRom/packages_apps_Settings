@@ -27,6 +27,11 @@
         android:entryValues="@array/quick_pulldown_values"
         android:defaultValue="1" />
 
+    <Preference
+        android:title="@string/qs_background_title"
+        android:summary="@string/qs_background_summary"
+        android:fragment="com.android.settings.display.QsOpacity" />
+
     <com.abc.support.preferences.SystemSettingSwitchPreference
         android:key="qs_tile_title_visibility"
         android:title="@string/qs_tile_title_visibility_title"
