@@ -62,7 +62,7 @@ public class PhoneNumberPreferenceController extends BasePreferenceController {
     @Override
     public CharSequence getSummary() {
         //return getFirstPhoneNumber();
-        return mContext.getString(R.string.device_info_protected_single_press);
+        return null;
     }
 
     @Override
@@ -136,7 +136,7 @@ public class PhoneNumberPreferenceController extends BasePreferenceController {
         }
 
         //return getFormattedPhoneNumber(subscriptionInfo);
-        return mContext.getString(R.string.device_info_protected_single_press);
+        return null;
     }
 
     private CharSequence getPreferenceTitle(int simSlot) {
