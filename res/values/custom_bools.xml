@@ -20,4 +20,7 @@
 
     <!-- Whether to display active edge category -->
     <bool name="has_active_edge">false</bool>
+
+    <!-- Whether to display touch sensitivity switch -->
+    <bool name="config_show_touch_sensitivity">false</bool>
 </resources>
