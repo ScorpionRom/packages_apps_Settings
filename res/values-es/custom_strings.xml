@@ -65,7 +65,6 @@
     <string name="notification_sound_vib_screen_on_summary">Reproducir sonido y vibrar al recibir notificaciones cuando la pantalla está encendida</string>
     <string name="screenshot_sound_title">Sonido de captura</string>
     <string name="doze_on_charge_title">Always on mientras se carga</string>
-    <string name="greatest_tick_label">Media pantalla</string>
     <!-- [CHAR LIMIT=60] -->
     <!-- [CHAR LIMIT=NONE] -->
     <!-- Status bar clock options -->

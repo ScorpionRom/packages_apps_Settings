@@ -36,7 +36,6 @@
     <string name="battery_light_low_color">Alhainen akun varaus</string>
     <string name="battery_light_medium_color">Akku puolivälissä</string>
     <string name="battery_light_full_color">Melkein täysi akku</string>
-    <string name="smallest_tick_label">Kokoruutu</string>
     <!-- [CHAR LIMIT=60] -->
     <!-- [CHAR LIMIT=NONE] -->
     <!-- Status bar clock options -->

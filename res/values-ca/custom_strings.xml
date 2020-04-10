@@ -50,7 +50,6 @@
     <string name="battery_light_full_color">Bateria gairebé plena</string>
     <string name="notification_sound_vib_screen_on_summary">Sona i vibra per a notificacions quan la pantalla està encesa</string>
     <string name="screenshot_sound_title">So de la captura</string>
-    <string name="smallest_tick_label">Pantalla completa</string>
     <!-- [CHAR LIMIT=60] -->
     <!-- [CHAR LIMIT=NONE] -->
     <!-- Status bar clock options -->

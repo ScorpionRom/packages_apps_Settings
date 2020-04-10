@@ -101,13 +101,6 @@
     <string name="doze_on_charge_title">Always On when charging</string>
     <string name="doze_on_charge_summary">Show Always On Ambient display when charging</string>
 
-    <string name="smallest_tick_label">Full screen</string>
-    <string name="greatest_tick_label">Half screen</string>
-    <!-- [CHAR LIMIT=60] -->
-    <string name="back_sensitivity_dialog_title_cust">Back Sensitivity and DeadZone</string>
-    <!-- [CHAR LIMIT=NONE] -->
-    <string name="back_sensitivity_dialog_message_cust">\nUse the first seekbar to configure back swipe sensitivity, the second seekbar to set the area of the screen where the swipe can be triggered, to avoid conflicts with in-app gestures.</string>
-
     <!-- Status bar clock options -->
     <string name="clock_date_settings_title">Statusbar clock</string>
     <string name="status_bar_clock">Clock and Date</string>
@@ -246,10 +239,6 @@
     <string name="du_themes_title">Themes</string>
     <string name="du_themes_summary">Life is like a box of crayons..</string>
 
-    <!-- Full screen gestures -->
-    <string name="navbar_gesture_pill_toggle_title">Full screen gestures</string>
-    <string name="navbar_gesture_pill_toggle_summary">This will hide both the navigation bar and the pill for a seamless fullscreen gesture experience.</string>
-
     <!-- Long back swipe options -->
     <string name="navbar_gesture_tweaks_pref_title">Custom gestures</string>
     <string name="navbar_gesture_tweaks_pref_summary">Customize gestures and set custom actions</string>
@@ -326,4 +315,15 @@
     <string name="adaptive_playback_timeout_2_min">2 minutes</string>
     <string name="adaptive_playback_timeout_5_min">5 minutes</string>
     <string name="adaptive_playback_timeout_10_min">10 minutes</string>
+
+    <!-- Gesture nav gear options -->
+    <!-- [CHAR LIMIT=60] -->
+    <string name="back_sensitivity_dialog_title_cust">Navbar tuning</string>
+    <string name="back_gesture_sensitivity_dialog_message">Higher sensitivity may conflict with any app gestures along the edges of the screen.</string>
+    <string name="back_gesture_area_dead_zone_title">Back area dead zone</string>
+    <string name="back_gesture_area_dead_zone_message">Set the area of the screen where the swipe can be triggered, to avoid conflicts with in-app gestures.</string>
+    <string name="smallest_tick_label">Full screen</string>
+    <string name="greatest_tick_label">Half screen</string>
+    <string name="show_gestures_navbar_title_text">Toggle navbar</string>
+    <string name="show_gestures_navbar_switch_text">Show gestures navbar</string>
 </resources>

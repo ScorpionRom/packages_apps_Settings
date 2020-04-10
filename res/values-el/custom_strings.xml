@@ -57,7 +57,6 @@
     <string name="notification_sound_vib_screen_on_summary">Ήχος και δόνηση ειδοποιήσεων όταν η οθόνη είναι ενεργή</string>
     <string name="screenshot_sound_title">Ηχος στιγμιότυπου οθόνης</string>
     <string name="doze_on_charge_title">Οθόνη πάντα ενεργή κατά την φόρτιση</string>
-    <string name="smallest_tick_label">Πλήρης οθόνη</string>
     <!-- [CHAR LIMIT=60] -->
     <!-- [CHAR LIMIT=NONE] -->
     <!-- Status bar clock options -->

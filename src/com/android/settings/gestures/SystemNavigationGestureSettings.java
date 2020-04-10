@@ -40,9 +40,7 @@ import android.view.accessibility.AccessibilityManager;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.SettingsTutorialDialogWrapperActivity;
 import com.android.settings.R;
@@ -66,10 +64,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SearchIndexable
-public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
-        implements Preference.OnPreferenceChangeListener {
-
-    private static final String GESTURE_PILL_TOGGLE = "gesture_pill_toggle";
+public class SystemNavigationGestureSettings extends RadioButtonPickerFragment {
 
     private static final String TAG = "SystemNavigationGesture";
 
@@ -77,7 +72,6 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
     static final String SHARED_PREFERENCES_NAME = "system_navigation_settings_preferences";
     @VisibleForTesting
     static final String PREFS_BACK_SENSITIVITY_KEY = "system_navigation_back_sensitivity";
-    static final String PREFS_BACK_DEAD_Y_ZONE_KEY = "system_navigation_back_sensitivity";
 
     @VisibleForTesting
     static final String KEY_SYSTEM_NAV_3BUTTONS = "system_nav_3buttons";
@@ -88,8 +82,6 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
 
     public static final String PREF_KEY_SUGGESTION_COMPLETE =
             "pref_system_navigation_suggestion_complete";
-
-    public static String[] BACK_GESTURE_OVERLAYS_TO_USE;
 
     @VisibleForTesting
     static final String NAV_BAR_MODE_GESTURAL_OVERLAY_NARROW_BACK
@@ -108,24 +100,7 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
             NAV_BAR_MODE_GESTURAL_OVERLAY_EXTRA_WIDE_BACK
     };
 
-    // No pill overlays
-    static final String NAV_BAR_MODE_GESTURAL_OVERLAY_NO_PILL
-            = "com.android.internal.systemui.navbar.gestural_nopill";
-    static final String NAV_BAR_MODE_GESTURAL_OVERLAY_NARROW_BACK_NO_PILL
-            = "com.android.internal.systemui.navbar.gestural_narrow_back_nopill";
-    static final String NAV_BAR_MODE_GESTURAL_OVERLAY_WIDE_BACK_NO_PILL
-            = "com.android.internal.systemui.navbar.gestural_wide_back_nopill";
-    static final String NAV_BAR_MODE_GESTURAL_OVERLAY_EXTRA_WIDE_BACK_NO_PILL
-            = "com.android.internal.systemui.navbar.gestural_extra_wide_back_nopill";
-    static final String[] BACK_GESTURE_INSET_OVERLAYS_NO_PILL = {
-            NAV_BAR_MODE_GESTURAL_OVERLAY_NARROW_BACK_NO_PILL,
-            NAV_BAR_MODE_GESTURAL_OVERLAY_NO_PILL,
-            NAV_BAR_MODE_GESTURAL_OVERLAY_WIDE_BACK_NO_PILL,
-            NAV_BAR_MODE_GESTURAL_OVERLAY_EXTRA_WIDE_BACK_NO_PILL
-    };
-
     static final String NAV_BAR_MODE_GESTURE_MODE_TWEAKS_KEY = "gesture_mode_tweaks";
-    static final String KEY_GESTURE_NAV_TWEAKS_PREF = "gesture_nav_custom_options";
 
     @VisibleForTesting
     static int BACK_GESTURE_INSET_DEFAULT_OVERLAY = 1;
@@ -133,10 +108,10 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
     private IOverlayManager mOverlayManager;
 
     private VideoPreference mVideoPreference;
-
+	
+    private static final String KEY_GESTURE_NAV_TWEAKS_CAT = "gesture_nav_tweaks_category";
+    private static final String KEY_GESTURE_NAV_TWEAKS_PREF = "gesture_nav_custom_options";
     private CustomPreferenceCategory mGestureTweaksCategory;
-    private CustomSwitchPreference mGesturePillToggle;
-
     private Preference mTweaksPreference;
 
     @Override
@@ -160,12 +135,6 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
         mGestureTweaksCategory = new CustomPreferenceCategory(context);
         mGestureTweaksCategory.setKey(NAV_BAR_MODE_GESTURE_MODE_TWEAKS_KEY);
         mGestureTweaksCategory.setTitle(context.getResources().getString(R.string.ambient_other_category));
-
-        mGesturePillToggle = new CustomSwitchPreference(context);
-        mGesturePillToggle.setKey(GESTURE_PILL_TOGGLE);
-        mGesturePillToggle.setTitle(context.getResources().getString(R.string.navbar_gesture_pill_toggle_title));
-        mGesturePillToggle.setChecked(getPillToggleState(context) == 1);
-        mGesturePillToggle.setOnPreferenceChangeListener(this);
 
         mTweaksPreference = new Preference(context);
         mTweaksPreference.setIconSpaceReserved(true);
@@ -201,16 +170,11 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
         }
 
         // Gesture tweaks category
-        setBackGestureOverlaysToUse(getContext());
-
         if (getCurrentSystemNavigationMode(getContext()) == KEY_SYSTEM_NAV_GESTURAL) {
-            mGesturePillToggle.setSummary(getContext().getResources().getString(R.string.navbar_gesture_pill_toggle_summary));
             screen.addPreference(mGestureTweaksCategory);
-            mGestureTweaksCategory.addPreference(mGesturePillToggle);
             mGestureTweaksCategory.addPreference(mTweaksPreference);
         } else {
             screen.removePreference(mGestureTweaksCategory);
-            mGestureTweaksCategory.removePreference(mGesturePillToggle);
             mGestureTweaksCategory.removePreference(mTweaksPreference);
         }
 
@@ -231,7 +195,8 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
         if (info.getKey() == KEY_SYSTEM_NAV_GESTURAL) {
             p.setExtraWidgetVisibility(EXTRA_WIDGET_VISIBILITY_SETTING);
             p.setExtraWidgetOnClickListener((v) -> GestureNavigationBackSensitivityDialog
-                    .show(this, getBackSensitivity(getContext(), mOverlayManager), getBackDeadZoneMode(getContext())));
+                    .show(this, getBackSensitivity(getContext(), mOverlayManager), getBackDeadZoneMode(getContext()),
+                    getShowNav(getContext())));
         } else {
             p.setExtraWidgetVisibility(EXTRA_WIDGET_VISIBILITY_GONE);
         }
@@ -248,9 +213,7 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
         List<CandidateInfoExtra> candidates = new ArrayList<>();
 
         if (SystemNavigationPreferenceController.isOverlayPackageAvailable(c,
-                NAV_BAR_MODE_GESTURAL_OVERLAY) ||
-                SystemNavigationPreferenceController.isOverlayPackageAvailable(c,
-                        NAV_BAR_MODE_GESTURAL_OVERLAY_NO_PILL)) {
+                NAV_BAR_MODE_GESTURAL_OVERLAY)) {
             candidates.add(new CandidateInfoExtra(
                     c.getText(R.string.edge_to_edge_navigation_title),
                     c.getText(R.string.edge_to_edge_navigation_summary),
@@ -296,7 +259,7 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
     @VisibleForTesting
     static void setBackSensitivity(Context context, IOverlayManager overlayManager,
             int sensitivity) {
-        if (sensitivity < 0 || sensitivity >= BACK_GESTURE_OVERLAYS_TO_USE.length) {
+        if (sensitivity < 0 || sensitivity >= BACK_GESTURE_INSET_OVERLAYS.length) {
             throw new IllegalArgumentException("Sensitivity out of range.");
         }
 
@@ -304,7 +267,7 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
         context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE).edit()
                 .putInt(PREFS_BACK_SENSITIVITY_KEY, sensitivity).apply();
         if (getCurrentSystemNavigationMode(context) == KEY_SYSTEM_NAV_GESTURAL) {
-            setNavBarInteractionMode(overlayManager, BACK_GESTURE_OVERLAYS_TO_USE[sensitivity]);
+            setNavBarInteractionMode(overlayManager, BACK_GESTURE_INSET_OVERLAYS[sensitivity], false);
         }
     }
 
@@ -321,12 +284,32 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
                 USER_CURRENT);
     }
 
+    static boolean getShowNav(Context context) {
+        boolean show = Settings.System.getIntForUser(context.getContentResolver(),
+                Settings.System.GESTURE_NAVBAR_SHOW, 1,
+                USER_CURRENT) != 0;
+        return show;
+    }
+
+    static void setShowNav(Context context, boolean show) {
+        Settings.System.putIntForUser(context.getContentResolver(),
+                Settings.System.GESTURE_NAVBAR_SHOW, show ? 1 : 0,
+                USER_CURRENT);
+        // if gesture nav is already set, force overlay reloading
+        if (getCurrentSystemNavigationMode(context) == KEY_SYSTEM_NAV_GESTURAL) {
+            final IOverlayManager overlayManager = IOverlayManager.Stub.asInterface(
+                    ServiceManager.getService(Context.OVERLAY_SERVICE));
+            int sensitivity = getBackSensitivity(context, overlayManager);
+            setNavBarInteractionMode(overlayManager, BACK_GESTURE_INSET_OVERLAYS[sensitivity], true);
+        }
+    }
+
     @VisibleForTesting
     static int getBackSensitivity(Context context, IOverlayManager overlayManager) {
-        for (int i = 0; i < BACK_GESTURE_OVERLAYS_TO_USE.length; i++) {
+        for (int i = 0; i < BACK_GESTURE_INSET_OVERLAYS.length; i++) {
             OverlayInfo info = null;
             try {
-                info = overlayManager.getOverlayInfo(BACK_GESTURE_OVERLAYS_TO_USE[i], USER_CURRENT);
+                info = overlayManager.getOverlayInfo(BACK_GESTURE_INSET_OVERLAYS[i], USER_CURRENT);
             } catch (RemoteException e) { /* Do nothing */ }
             if (info != null && info.isEnabled()) {
                 return i;
@@ -335,18 +318,6 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
         // If Gesture nav is not selected, read the value from shared preferences.
         return context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
                 .getInt(PREFS_BACK_SENSITIVITY_KEY, BACK_GESTURE_INSET_DEFAULT_OVERLAY);
-    }
-
-    static int getPillToggleState(Context context) {
-        return Settings.System.getInt(context.getContentResolver(),
-                Settings.System.GESTURE_PILL_TOGGLE, 0);
-    }
-
-    static void setBackGestureOverlaysToUse(Context context) {
-        if (getPillToggleState(context) == 1)
-            BACK_GESTURE_OVERLAYS_TO_USE = BACK_GESTURE_INSET_OVERLAYS_NO_PILL;
-        else
-            BACK_GESTURE_OVERLAYS_TO_USE = BACK_GESTURE_INSET_OVERLAYS;
     }
 
     @VisibleForTesting
@@ -366,20 +337,24 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
         switch (key) {
             case KEY_SYSTEM_NAV_GESTURAL:
                 int sensitivity = getBackSensitivity(context, overlayManager);
-                setNavBarInteractionMode(overlayManager, BACK_GESTURE_OVERLAYS_TO_USE[sensitivity]);
+                setNavBarInteractionMode(overlayManager, BACK_GESTURE_INSET_OVERLAYS[sensitivity], false);
                 break;
             case KEY_SYSTEM_NAV_2BUTTONS:
-                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_2BUTTON_OVERLAY);
+                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_2BUTTON_OVERLAY, false);
                 break;
             case KEY_SYSTEM_NAV_3BUTTONS:
-                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_3BUTTON_OVERLAY);
+                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_3BUTTON_OVERLAY, false);
                 break;
         }
     }
 
     private static void setNavBarInteractionMode(IOverlayManager overlayManager,
-            String overlayPackage) {
+            String overlayPackage, boolean force) {
         try {
+            if (force) {
+                // disable then enable again
+                overlayManager.setEnabled(overlayPackage, false, USER_CURRENT);
+            }
             overlayManager.setEnabledExclusiveInCategory(overlayPackage, USER_CURRENT);
         } catch (RemoteException e) {
             throw e.rethrowFromSystemServer();
@@ -437,19 +412,4 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
                     return SystemNavigationPreferenceController.isGestureAvailable(context);
                 }
             };
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mGesturePillToggle) {
-            boolean toggleState = (Boolean) newValue;
-            Settings.System.putInt(getContext().getContentResolver(),
-                    Settings.System.GESTURE_PILL_TOGGLE, toggleState ? 1 : 0);
-
-            setBackGestureOverlaysToUse(getContext());
-            setCurrentSystemNavigationMode(getContext(), mOverlayManager,
-                    getCurrentSystemNavigationMode(getContext()));
-        }
-
-        return true;
-    }
 }
