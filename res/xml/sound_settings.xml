@@ -141,11 +141,31 @@
         android:ringtoneType="alarm"
         android:order="-80"/>
 
+    <PreferenceCategory
+        android:key="media"
+        android:title="@string/media_title"
+        android:order="-70">
+
+        <com.abc.support.preferences.SystemSettingSwitchPreference
+            android:key="adaptive_playback_enabled"
+            android:title="@string/adaptive_playback_title"
+            android:summary="@string/adaptive_playback_summary"
+            android:defaultValue="false" />
+
+        <com.abc.support.preferences.SystemSettingListPreference
+            android:key="adaptive_playback_timeout"
+            android:title="@string/adaptive_playback_timeout_title"
+            android:entries="@array/adaptive_playback_timeout_entries"
+            android:entryValues="@array/adaptive_playback_timeout_values"
+            android:defaultValue="30000"
+            android:dependency="adaptive_playback_enabled" />
+    </PreferenceCategory>
+
     <!-- Screen locking sounds -->
     <SwitchPreference
         android:key="swap_volume_keys_on_rotation"
         android:title="@string/swap_volume_keys_on_rotation_title"
-         android:order="-60"/>
+        android:order="-60"/>
 
     <!-- Other sounds -->
     <PreferenceCategory
