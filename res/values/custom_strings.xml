@@ -89,6 +89,10 @@
     <string name="less_boring_heads_up_title">Less boring heads up</string>
     <string name="less_boring_heads_up_summary">Quickly disable heads up for all apps but keep them enabled for dialer and messaging apps</string>
 
+    <!-- R Notification headers -->
+    <string name="notification_headers_title">Show notification headers</string>
+    <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
+
     <string name="notification_sound_vib_screen_on_title">Notification sound if active</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
 
