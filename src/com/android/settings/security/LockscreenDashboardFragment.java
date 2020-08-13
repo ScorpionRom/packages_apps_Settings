@@ -18,7 +18,6 @@ package com.android.settings.security;
 
 import android.app.settings.SettingsEnums;
 import android.content.Context;
-import android.content.ContentResolver;
 import android.hardware.display.AmbientDisplayConfiguration;
 import android.provider.SearchIndexableResource;
 
@@ -37,7 +36,6 @@ import com.android.settings.gestures.PickupGesturePreferenceController;
 import com.android.settings.notification.LockScreenNotificationPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.security.screenlock.LockScreenPreferenceController;
-import com.android.settings.security.LockScreenVisualizer;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
@@ -86,11 +84,6 @@ public class LockscreenDashboardFragment extends DashboardFragment
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.security_lockscreen_settings;
-    }
-
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        LockScreenVisualizer.reset(mContext);
     }
 
     @Override
