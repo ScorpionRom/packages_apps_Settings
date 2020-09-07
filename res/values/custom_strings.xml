@@ -141,6 +141,10 @@
     <string name="clock_date_right">Right of time</string>
     <string name="clock_date_left">Left of time</string>
     <string name="clock_date_position">Date position</string>
+    <string name="clock_position">Clock position</string>
+    <string name="clock_position_right">Right clock</string>
+    <string name="clock_position_center">Center clock</string>
+    <string name="clock_position_left">Left clock</string>
 
     <!-- Lockscreen clock style -->
     <string name="lockscreen_clock_title">Lockscreen clock</string>

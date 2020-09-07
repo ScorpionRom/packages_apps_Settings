@@ -28,13 +28,17 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.text.format.DateFormat;
+import android.view.View;
 import android.widget.EditText;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.custom.Utils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+
+import com.abc.support.preferences.SecureSettingIntListPreference;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -48,6 +52,9 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
     private static final String PREF_CLOCK_DATE_FORMAT = "clock_date_format";
     private static final String PREF_STATUS_BAR_CLOCK = "status_bar_show_clock";
     private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
+    private static final String CLOCK_POSITION = "status_bar_clock_position";
+
+    private Context mContext;
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -59,12 +66,24 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
     private ListPreference mClockDateFormat;
     private SwitchPreference mStatusBarClock;
     private ListPreference mClockDatePosition;
+    private SecureSettingIntListPreference mClockPosition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.clock_date_settings);
+
+        mClockPosition = (SecureSettingIntListPreference) findPreference(CLOCK_POSITION);
+
+        // Adjust status bar clock prefs for notched devices
+        if (Utils.hasNotch(getActivity())) {
+            mClockPosition.setEntries(R.array.clock_position_entries_notch);
+            mClockPosition.setEntryValues(R.array.clock_position_values_notch);
+        } else {
+            mClockPosition.setEntries(R.array.clock_position_entries);
+            mClockPosition.setEntryValues(R.array.clock_position_values);
+        }
 
         mClockAmPmStyle = (ListPreference) findPreference(PREF_AM_PM_STYLE);
         mClockAmPmStyle.setOnPreferenceChangeListener(this);
@@ -128,6 +147,19 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
             mClockDateStyle.setEnabled(false);
             mClockDateFormat.setEnabled(false);
             mClockDatePosition.setEnabled(false);
+        }
+    }
+
+    public void onResume(Context context) {
+    super.onResume();
+
+        // Adjust status bar clock prefs for notched devices
+        if (Utils.hasNotch(getActivity())) {
+            mClockPosition.setEntries(R.array.clock_position_entries_notch);
+            mClockPosition.setEntryValues(R.array.clock_position_values_notch);
+        } else {
+            mClockPosition.setEntries(R.array.clock_position_entries);
+            mClockPosition.setEntryValues(R.array.clock_position_values);
         }
     }
 
