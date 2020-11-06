@@ -260,4 +260,8 @@
     <!-- QS panel opacity -->
     <string name="qs_panel_alpha_title">Background opacity</string>
     <string name="qs_panel_alpha_summary">Adjust opacity/transparency of QS panel background</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
+    <string name="lockscreen_battery_info_summary">Show charging current, voltage, wattage and battery temperature on lockscreen while charging</string>
 </resources>
