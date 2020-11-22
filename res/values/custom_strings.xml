@@ -239,4 +239,8 @@
     <string name="touch_sensitivity_summary">Improves touch when using screen protectors</string>
     <string name="touch_sensitivity_title">Increase touch sensitivity</string>
     <string name="keywords_touch_sensitivity">touch, sensitivity, sensitive, screen protector, film, responsive, responsiveness</string>
+
+    <!-- Show/Hide Nav pill -->
+    <string name="show_gestures_navbar_switch_title">Show pill</string>
+    <string name="show_gestures_navbar_switch_summary">Show gestures navbar</string>
 </resources>
