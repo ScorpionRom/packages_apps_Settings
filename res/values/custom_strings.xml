@@ -199,9 +199,6 @@
     <string name="three_finger_gesture">Swipe to screenshot</string>
     <string name="three_finger_gesture_summary">Swipe down with three fingers to take a screenshot</string>
 
-    <!-- Black theme -->
-    <string name="darker_theme_enable">Go Black Never Come Back</string>
-
     <!-- Pulse -->
     <string name="pulse_help_policy_notice_summary">Pulse does not work with some audio sources when listening on device speaker</string>
     <string name="pulse_cat_title">Pulse equalizer</string>
