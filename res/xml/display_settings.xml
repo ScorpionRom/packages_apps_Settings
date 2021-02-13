@@ -155,6 +155,12 @@
         android:title="@string/device_theme"
         android:summary="@string/summary_placeholder" />
 
+    <com.srx.support.preferences.GlobalSettingSwitchPreference
+        android:key="disable_transition_animations"
+        android:title="@string/disable_transition_animations_title"
+        android:summary="@string/disable_transition_animations_summary"
+        android:defaultValue="false" />
+
     <SwitchPreference
         android:key="touch_sensitivity"
         android:summary="@string/touch_sensitivity_summary"
