@@ -39,7 +39,13 @@
     <string name="qs_rows_landscape_title">Tiles rows on landscape</string>
     <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
     <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
-    <string name="qs_tile_title_visibility_title">Show tiles title</string>    
+    <string name="qs_tile_title_visibility_title">Show tiles title</string> 
+
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">QS footer text</string>
+    <string name="qs_footer_text_summary">Display text at bottom of QS panel</string>
+    <string name="qs_footer_text_string_title">Customize footer text</string>
+    <string name="qs_footer_text_string_summary">Set to empty for default</string>   
 
     <!-- Torch Power button gestures -->
     <string name="double_tap_power_flashlight_screen_title">Activate the torch</string>
