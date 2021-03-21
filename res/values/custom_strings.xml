@@ -103,6 +103,8 @@
     <string name="lockscreen_clock_default_bold">Default (bold)</string>
     <string name="lockscreen_clock_sammy">Sammy</string>
     <string name="lockscreen_clock_sammy_bold">Sammy (bold)</string>
+    <string name="lockscreen_clock_sfuny">SFUNY</string>
+    <string name="lockscreen_clock_sfuny_bold">SFUNY (bold)</string>
 
     <!-- Battery Styles -->
     <string name="battery_percent_title">Statusbar battery indicator</string>
