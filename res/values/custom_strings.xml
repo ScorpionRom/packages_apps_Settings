@@ -256,4 +256,8 @@
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- QS panel opacity -->
+    <string name="qs_panel_alpha_title">Background opacity</string>
+    <string name="qs_panel_alpha_summary">Adjust opacity/transparency of QS panel background</string>
 </resources>
