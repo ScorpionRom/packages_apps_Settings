@@ -106,6 +106,12 @@
             android:fragment="com.android.settings.gestures.PickupGestureSettings"
             settings:searchable="false"
             settings:controller="com.android.settings.gestures.PickupGesturePreferenceController" />
+			
+		<com.srx.support.preferences.SystemSettingSwitchPreference
+		    android:key="volume_rocker_wake"
+            android:summary="@string/volume_rocker_wake_summary"
+            android:title="@string/volume_rocker_wake_title"
+            android:defaultValue="false" />
 
         <SwitchPreference
             android:key="ambient_display_notification"
