@@ -110,6 +110,13 @@
         android:order="-120"
         settings:keywords="@string/sound_settings"/>
 
+    <!-- Lock screen visualiser -->
+    <Preference
+        android:key="lockscreen_visualizer"
+        android:fragment="com.android.settings.sound.Visualizer"
+        android:title="@string/lockscreen_visualizer_enable"
+        android:summary="@string/lockscreen_visualizer_enable_summary" />
+
     <!-- Live Caption -110 and Now Playing -105-->
     <Preference
         android:key="media_controls_summary"
