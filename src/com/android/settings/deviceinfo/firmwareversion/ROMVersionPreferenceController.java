@@ -25,7 +25,7 @@ import com.android.settings.core.BasePreferenceController;
 public class ROMVersionPreferenceController extends BasePreferenceController {
 
     @VisibleForTesting
-    private static final String SCORPION_PROP = "ro.scorpion.display.version";
+    private static final String SCORPION_PROP = "ro.modversion";
 
     public ROMVersionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
